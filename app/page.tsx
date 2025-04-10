@@ -46,16 +46,25 @@ export default function Home() {
       <h1 className="text-2xl font-bold text-center">Green Deal: Souhlasíte?</h1>
       {questions.map((question, index) => (
         <div key={index} className="border rounded p-4">
-          <p className="font-medium">{question}</p>
-          <div className="space-x-2 mt-2">
-            <button onClick={() => handleAnswer(index, "yes")}>Ano</button>
-            <button onClick={() => handleAnswer(index, "no")}>Ne</button>
-            <button onClick={() => handleAnswer(index, "dontknow")}>Nevím</button>
+          <p className="font-medium mb-2">{question}</p>
+          <div className="space-x-2">
+            <button
+              className={\`px-4 py-2 rounded \${answers[index] === "yes" ? "bg-blue-600 text-white" : "bg-gray-200"}\`}
+              onClick={() => handleAnswer(index, "yes")}
+            >
+              Ano
+            </button>
+            <button
+              className={\`px-4 py-2 rounded \${answers[index] === "no" ? "bg-blue-600 text-white" : "bg-gray-200"}\`}
+              onClick={() => handleAnswer(index, "no")}
+            >
+              Ne
+            </button>
           </div>
         </div>
       ))}
       <div className="text-center">
-        <button onClick={handleSubmit} className="bg-blue-600 text-white px-4 py-2 rounded">
+        <button onClick={handleSubmit} className="mt-6 bg-green-600 text-white px-6 py-2 rounded">
           Vyhodnotit
         </button>
       </div>
