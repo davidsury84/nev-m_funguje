@@ -49,13 +49,13 @@ export default function Home() {
           <p className="font-medium mb-2">{question}</p>
           <div className="space-x-2">
             <button
-              className={\`px-4 py-2 rounded \${answers[index] === "yes" ? "bg-blue-600 text-white" : "bg-gray-200"}\`}
+              className={answers[index] === "yes" ? "px-4 py-2 rounded bg-blue-600 text-white" : "px-4 py-2 rounded bg-gray-200"}
               onClick={() => handleAnswer(index, "yes")}
             >
               Ano
             </button>
             <button
-              className={\`px-4 py-2 rounded \${answers[index] === "no" ? "bg-blue-600 text-white" : "bg-gray-200"}\`}
+              className={answers[index] === "no" ? "px-4 py-2 rounded bg-blue-600 text-white" : "px-4 py-2 rounded bg-gray-200"}
               onClick={() => handleAnswer(index, "no")}
             >
               Ne
